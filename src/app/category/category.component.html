@@ -1,0 +1,4 @@
+<ul *ngFor ="let c of catgory">
+  <li (click)= "onSelect()">{{c.name}}    <img src="{{c.im}}"> </li>
+  <router-outlet></router-outlet>
+</ul>
