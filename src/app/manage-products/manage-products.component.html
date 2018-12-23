@@ -1,0 +1,84 @@
+<html>
+
+
+        <h1 >Product Add Form</h1>
+<div id="form-outer">
+  
+ 
+
+  <div class="labels">
+    <label> ID: </label>
+  </div>
+  <div class="rightTab">
+    <input autofocus type="text"  [(ngModel)] ='id' class="input-field" placeholder="Enter your Id product" required>
+  </div>
+
+      <div class="labels">
+        <label> Name Product : </label>
+      </div>
+      <div class="rightTab">
+        <input autofocus type="text"  [(ngModel)] ='name' class="input-field" placeholder="Enter your name product" required>
+      </div>
+   
+      <div class="labels">
+        <label >  Category: </label>
+      </div>
+      <div class="rightTab">
+          <input type="radio" [(ngModel)] ='type' value="man" > Man<br>
+          <input type="radio" [(ngModel)] ='type' value="woman"> woman<br>
+          <input type="radio" [(ngModel)] ='type' value='baby'> baby
+       
+      </div>
+    
+      <div class="labels">
+        <label> Description : </label>
+      </div>
+      <div class="rightTab">
+        <input type="text"  [(ngModel)] ='description' class="input-field" placeholder="Description">
+      </div>
+   
+    
+</div>
+  
+     
+    <button id="submit" type="submit" (click)=" addProduct()">Adding</button>
+
+    
+       
+
+     <!--  <form #addProduct="ngForm" (ngSubmit)='addNew(addProduct)'>
+id :<input #id ='ngModel' ngModel/>
+name : <input  #name ='ngModel' required minlength="10"/>
+<span *ngIf='addProduct.submitted && name.errors.required'>
+  u have to fill the name
+</span>
+description :<input name="description" ngModel/>
+
+<button type="submit"> add</button>
+-->
+
+
+      
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>name Product</th>
+                <th>Category</th> 
+                <th>description</th>
+                <th>Edit</th>
+                <th >Delete</th>
+                
+              </tr>
+              <tr *ngFor= 'let prod of data'>
+                <td>{{prod.id}}</td>
+                <td>{{prod.name}}</td> 
+                <td>{{prod.type}}</td>
+                <td>{{prod.description}}</td>
+                <td>edit</td>
+                <td ><button (click)="delete(prod.id)"> delete </button> </td>
+              </tr>
+        </table>
+        
+
+<br>
+ </html>
